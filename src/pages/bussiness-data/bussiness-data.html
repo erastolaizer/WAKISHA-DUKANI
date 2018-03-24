@@ -1,0 +1,23 @@
+
+<ion-header>
+  <ion-navbar>
+  <ion-title align="right"><button ion-button (click)="closeBuss()" round color="primary"  end><ion-icon name="close-circle"></ion-icon></button></ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding class="bus"><br>
+    <div  color="blue" *ngFor="let bus of buss; let i=index" >
+        <p>Biashara iliyo sajiliwa {{bus.registered}}</p>
+     <ion-card color="blue">
+      <ion-card-content>
+       <p><b>Jina lako</b>          :    {{bus.customer_name}}<br><br></p>
+       <p><b>Jina la biashara</b>    :    {{bus.name}} <br><br></p>
+       <p><b>Idadi ya wafanyakazi </b>: {{bus.employee_number}} <br><br></p>
+       <p><b>Mtaji uliopo sasa</b>   :    {{bus.current_capital}}<br><br></p>
+       <p><b>Mtaji unaohitajika</b>   :    {{bus.required_capital}}<br><br></p>
+       <p><b>Kuanzia Tarehe</b>       :    {{bus.start_date}}<br><br></p>
+       <p><b>Kitu kitakachokua msingi wa mafanikio</b>   :    {{bus.success_description}}<br></p>
+     </ion-card-content>
+    </ion-card>
+  </div><br>
+</ion-content>

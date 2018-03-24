@@ -1,0 +1,67 @@
+
+<ion-header>
+  <ion-navbar>
+    <ion-title> Jisajili WAKISHA</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding class="sign">
+
+  <ion-grid>
+<h3><ion-label color="secondary">Jisajili kupata ofa za WAKISHA</ion-label></h3>
+  <form [formGroup]="register" (ngSubmit)="regForm()">
+    <ion-list inset>
+        <ion-item >
+          <ion-label><pre> <ion-icon name="person" ></ion-icon></pre></ion-label>
+          <ion-input class="cap" type="text" formControlName="name" [(ngModel)]="regData.name" placeholder="Jina Kamili" style="text-transform:capitalize"></ion-input>
+        </ion-item> <br>
+
+      <ion-item>
+      <ion-select formControlName="gender" [(ngModel)]="regData.gender" placeholder="Jinsia" cancelText="Sitisha" okText="Sawa">
+        <ion-option value="M">Kiume</ion-option>
+        <ion-option value="F" [selected]="true">Kike</ion-option>
+      </ion-select>
+      </ion-item><br>
+
+      <ion-item>
+        <ion-label><pre> <ion-icon name="call"></ion-icon></pre></ion-label>
+        <ion-input type="text" formControlName="phone_number" [(ngModel)]="regData.phone_number" placeholder="Namba ya Simu"></ion-input>
+      </ion-item><br>
+
+      <ion-item>
+        <ion-label><pre> <ion-icon name="mail"></ion-icon></pre></ion-label>
+        <ion-input type="email" formControlName="email" [(ngModel)]="regData.email" placeholder="Barua Pepe"></ion-input>
+      </ion-item><br>
+
+    <ion-item>
+    <ion-select formControlName="type" [(ngModel)]="regData.type" placeholder="Wewe ni nani?" cancelText="Sitisha" okText="Sawa">
+      <ion-option value="Student">Mwanafunzi</ion-option>
+      <ion-option value="Entrepreneur">Mjasiriamali</ion-option>
+      <ion-option value="Jobless">Sina kazi</ion-option>
+      <ion-option value="Looking for Job">Ninatafuta kazi</ion-option>
+    </ion-select>
+  </ion-item><br>
+
+  <ion-item>
+  <ion-select formControlName="region_id" [(ngModel)]="regData.region_id" placeholder="Mkoa"  #C (ionChange)="onChange(C.value)" cancelText="Sitisha" okText="Sawa">
+    <ion-option *ngFor="let reg of reg.regions" value={{reg.table_id}}>{{reg.name}}</ion-option>
+  </ion-select>
+  </ion-item><br>
+
+  <ion-item>
+  <ion-select formControlName="district_id" [(ngModel)]="regData.district_id" placeholder="Wilaya" cancelText="Sitisha" okText="Sawa">
+    <ion-option *ngFor="let distr of distr.districts" value={{distr.table_id}}>{{distr.name}}</ion-option>
+  </ion-select>
+</ion-item><br>
+
+<ion-item class="cap">
+  <ion-label><pre> <ion-icon name="plane"></ion-icon></pre></ion-label>
+  <ion-input type="text" formControlName="street" [(ngModel)]="regData.street" placeholder="Mtaa"></ion-input>
+</ion-item><br>
+
+    <button ion-button type="submit" [disabled]="!register.valid" block>jisajili</button>
+    </ion-list>
+    </form>
+
+  </ion-grid>
+</ion-content>

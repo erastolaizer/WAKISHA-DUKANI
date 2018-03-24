@@ -1,0 +1,80 @@
+<ion-header>
+<ion-row>
+<ion-col col-6>
+<ion-buttons left>
+      <button ion-button menuToggle color="back">
+        <ion-icon name="menu"></ion-icon>
+      </button>
+    </ion-buttons>
+</ion-col>
+<ion-col col-6 align="center">
+  <div class="dropdown" >
+  <button ion-button outline round color="light" class="dropbtn"><pre>{{loguser.name}} <ion-icon name="arrow-dropdown-circle"></ion-icon></pre></button>
+  <ion-list class="dropdown-content" >
+    <ion-item (click)= "pass()" >Badilisha Nywila</ion-item>
+    <ion-item (click)="logout()" >Toka</ion-item>
+  </ion-list>
+</div>
+</ion-col>
+</ion-row>
+</ion-header>
+
+<ion-content padding class="open">
+  <ion-grid>
+  <h3><ion-label color="secondary">Weka maelezo ya biashara unayotaka kufungua</ion-label></h3>
+  <form [formGroup]="open" (ngSubmit)="openForm()">
+    <ion-list>
+
+      <ion-item>
+        <ion-label stacked><h2>Unatarajia kufunya kitu gani cha kijasiriamali?</h2></ion-label>
+        <ion-input class="cap" type="text" formControlName="name"></ion-input>
+      </ion-item>
+
+    <ion-item>
+      <ion-label stacked><h2>Kuanzia Tarehe</h2></ion-label>
+        <ion-datetime displayFormat="YYYY-MM-DD" formControlName="start_date" max="2020-10-31" cancelText="Sitisha" doneText="Sawa"></ion-datetime>
+      </ion-item>
+
+    <ion-item>
+      <ion-label stacked><h2>Mradi utahitaji mtaji kiasi gani?</h2></ion-label>
+       <ion-input type="text"  formControlName="required_capital"></ion-input>
+        </ion-item>
+
+      <ion-item>
+        <ion-label stacked><h2>Mradi utaajiri watu wangapi</h2></ion-label>
+        <ion-input type="text" formControlName="expected_employee_number"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label stacked><h2>Unatarajia faida kiasi gani kwa mwezi?</h2></ion-label>
+        <ion-input type="text" formControlName="expected_profit"></ion-input>
+      </ion-item>
+
+    <ion-item>
+      <ion-label stacked><h2>Kitu gani kitakua msingi wa mafanikio yako?</h2></ion-label>
+      <ion-textarea type="text" formControlName="success_description"></ion-textarea>
+    </ion-item> <br>
+  </ion-list>
+
+        <button ion-button type="submit" round align="right" color="blue" [disabled]="!open.valid">Hifadhi</button>
+  </form>
+</ion-grid><br>
+<!--  <ion-list>
+    <ion-item >
+      <ion-row color="light">
+        <ion-col col-1 align="center">No:</ion-col>
+        <ion-col col-5 align="center">Name</ion-col>
+        <ion-col col-6 align="center">Registered</ion-col>
+      </ion-row>
+    </ion-item>
+    <ion-item *ngFor="let idea of ideas; let i=index">
+      <ion-row>
+        <ion-col col-1>{{i+1}}</ion-col>
+        <ion-col col-5 >{{idea.name}}</ion-col>
+        <ion-col col-6 >{{idea.registered}}</ion-col>
+      </ion-row>
+    </ion-item>
+  </ion-list> -->
+  <button ion-button (click)="ViewIdea()"  round color="light" outline>biashara unazotaka kufungua</button>
+
+</ion-content>

@@ -1,0 +1,77 @@
+
+<ion-menu [content]="content" id="user">
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>Dashibodi</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content>
+    <ion-list>
+
+      <button ion-item (click)="aboutMe()" menuClose>
+        Kuhusu Mimi
+      </button>
+      <button ion-item (click)="profile()" menuClose>
+        Boresha maelezo yako
+      </button>
+      <button ion-item (click)="expand()" menuClose>
+        Nataka kukuza Biashara yangu
+      </button>
+      <button ion-item (click)="openbus()" menuClose>
+        Nataka kufungua biashara
+      </button>
+      <button ion-item (click)="job()" menuClose>
+        Ninatafuta Kazi
+      </button>
+      <button ion-item (click)="message()" menuClose>
+        Tuma ujumbe
+      </button>
+
+
+    </ion-list>
+  </ion-content>
+</ion-menu>
+<ion-menu [content]="content" id="admin">
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>WAKISHA</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content>
+
+    <ion-list>
+
+      <button ion-item (click)="dashboard()" menuClose>
+        Dashboard
+      </button>
+
+      <button ion-item (click)="employer()" menuClose>
+        employer
+      </button>
+
+      <button ion-item (click)="location()" menuClose>
+        Location
+      </button>
+
+    <button ion-item (click)="location()" menuClose>
+        Customer List
+      </button>
+
+    <button ion-item (click)="customer()" menuClose>
+    Business List
+  </button>
+
+  <button ion-item (click)="customer()" menuClose>
+    Ideas List
+  </button>
+
+  <button ion-item (click)="customer()" menuClose>
+    Looking Job List
+  </button>
+
+    </ion-list>
+  </ion-content>
+</ion-menu>
+<ion-nav [root]="rootPage" #content></ion-nav>
+
+<!--<ion-nav  #content [root]="rootPage"></ion-nav> -->

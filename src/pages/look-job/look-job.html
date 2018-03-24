@@ -1,0 +1,65 @@
+<ion-header>
+<ion-row>
+<ion-col col-6>
+<ion-buttons left>
+      <button ion-button menuToggle color="back">
+        <ion-icon name="menu"></ion-icon>
+      </button>
+    </ion-buttons>
+</ion-col>
+<ion-col col-6 align="center">
+  <div class="dropdown" >
+  <button ion-button outline round color="light" class="dropbtn"><pre>{{loguser.name}} <ion-icon name="arrow-dropdown-circle"></ion-icon></pre></button>
+  <ion-list class="dropdown-content" >
+    <ion-item (click)= "pass()" >Badilisha Nywila</ion-item>
+    <ion-item (click)="logout()" >Toka</ion-item>
+  </ion-list>
+</div>
+</ion-col>
+</ion-row>
+</ion-header>
+
+<ion-content padding class="job">
+  <ion-grid>
+  <h3><ion-label color="secondary">Weka maelezo ya kazi unayotafuta</ion-label></h3>
+  <form [formGroup]="job" (ngSubmit)="jobForm()">
+    <ion-list>
+
+      <ion-item>
+        <ion-label stacked><h2>Unapenda kufanya kazi sekta gani?</h2></ion-label>
+      <ion-select formControlName="sector" cancelText="Sitisha" okText="Sawa">
+        <ion-option  value="Serikalini">Serikalini</ion-option>
+        <ion-option  value="Kampuni Binafsi">Kampuni Binafsi</ion-option>
+        <ion-option  value="yoyote">Yoyote</ion-option>
+    </ion-select>
+  </ion-item>
+
+      <ion-item>
+        <ion-label stacked><h2>Kazi gani?</h2></ion-label>
+        <ion-input class="cap" type="text" formControlName="name"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label stacked><h2>Unataka mshahara kiasi gani?</h2></ion-label>
+        <ion-input type="text" formControlName="salary_level"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label stacked><h2>Uko tayari kufanya kazi mkoa gani?</h2></ion-label>
+      <ion-select formControlName="region_id" [(ngModel)]="region" cancelText="Sitisha" okText="Sawa">
+        <ion-option *ngFor="let reg of reg.regions" value={{reg.table_id}}>{{reg.name}}</ion-option>
+    </ion-select>
+  </ion-item>
+
+    <ion-item>
+      <ion-label stacked><h2>Kitu gani kitakua msingi wa mafanikio yako?</h2></ion-label>
+      <ion-textarea type="text" formControlName="success_description"></ion-textarea>
+    </ion-item><br>
+
+  </ion-list>
+    <button ion-button type="submit"  align="right"round  color="blue" [disabled]="!job.valid">Hifadhi</button>
+  </form>
+</ion-grid><br>
+
+  <button ion-button (click)="ViewJob()" align="right" round color="light" outline>angalia kazi</button>
+</ion-content>

@@ -1,0 +1,22 @@
+
+<ion-header>
+  <ion-navbar>
+  <ion-title align="right"><button ion-button (click)="closeJob()" round color="primary"  end><ion-icon name="close-circle"></ion-icon></button></ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding class="job"><br>
+    <div *ngFor="let job of jobs; let i=index" >
+          <p><b><strong>Kazi iliyo sajiliwa {{job.registered}}</strong></b></p>
+      <ion-card color="blue">
+        <ion-card-content color="primary">
+       <p><b>Jina lako</b>          :    {{job.customer_name}}<br><br></p>
+       <p><b>Jina la kazi</b>         :    {{job.name}} <br><br></p>
+       <p><b>Mkoa unaopenda kufanyia kazi </b>  :    {{job.region}} <br><br></p>
+       <p><b>Kiwango cha mshahara </b>            :    {{job.salary_level}}<br><br></p>
+       <p><b>Sekta unayopenda kufanya kazi</b>       :    {{job.sector}}<br><br></p>
+       <p><b>Kitu kitakachokua msingi wa mafanikio</b>   :    {{job.success_description}}<br></p>
+        </ion-card-content>
+      </ion-card>
+    </div><br>
+</ion-content>

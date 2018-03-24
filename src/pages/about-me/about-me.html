@@ -1,0 +1,39 @@
+
+<ion-header>
+<ion-row>
+<ion-col col-6>
+<ion-buttons left>
+      <button ion-button menuToggle color="back">
+        <ion-icon name="menu"></ion-icon>
+      </button>
+    </ion-buttons>
+</ion-col>
+<ion-col col-6 align="center">
+  <div class="dropdown" >
+  <button ion-button outline round color="light" class="dropbtn"><pre>{{logu.name}} <ion-icon name="arrow-dropdown-circle"></ion-icon></pre></button>
+  <ion-list class="dropdown-content" >
+    <ion-item (click)= "pass()" >Badilisha Nywila</ion-item>
+    <ion-item (click)="logout()" >Toka</ion-item>
+  </ion-list>
+</div>
+</ion-col>
+</ion-row>
+</ion-header>
+
+<ion-content padding class="about">
+  <ion-grid>
+    <h4><ion-label color="secondary"> Kuhusu Mimi </ion-label></h4>
+
+<p> Upo/Umesoma shule/Chuo gani?: {{prof.school_name}}</p>
+<p> Mkoa shule ilipo          : {{prof.school_region}}</p>
+<p> Wilaya shule ilipo      : {{prof.school_district}}</p>
+<p> Course                  : {{prof.course}}</p>
+<p> Kuanzia Tarehe      : {{prof.school_start_date}}</p>
+<p> Mpaka Tarehe       : {{prof.school_end_date}}</p>
+<p> Kiwango cha elimu         : {{prof.education_level}}</p>
+<p> Kiwango cha ufaulu              : {{prof.pass_level}}</p>
+<p> Ujuzi/Kipaji                : {{prof.talent}}</p>
+
+</ion-grid><br>
+  <button ion-button (click)="changePro()" color="light" round outline>badili maelezo yangu</button>
+</ion-content>

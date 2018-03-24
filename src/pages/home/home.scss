@@ -1,0 +1,43 @@
+page-home {
+  .home{
+    background-color: #8B9FB1;
+    align-items: center;
+    align-content: center;
+  }
+  ion-grid{
+  //  background-image: url(../assets/img/home.png);
+    width: 50%;
+    height: 15%;
+    align-items: center;
+  }
+
+
+  .button-group {
+  .col {
+    &:first-child:not(:last-child) {
+      padding-right: 0;
+      .button {
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+      }
+    }
+    &:not(:first-child):not(:last-child) {
+      padding-right: 0;
+      padding-left: 0;
+      .button {
+        border-radius: 0;
+      }
+    }
+    &:last-child:not(:first-child) {
+      padding-left: 0;
+      .button {
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+      }
+    }
+  }
+}
+p {
+  color: light;
+}
+}

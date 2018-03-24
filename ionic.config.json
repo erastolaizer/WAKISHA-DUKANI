@@ -1,0 +1,14 @@
+{
+  "name": "JIPANGE",
+  "app_id": "",
+  "type": "ionic-angular",
+  "proxies": [
+    {
+      "path": "/api",
+      "proxyUrl": "http://cors.api.com/api"
+    }
+  ],
+  "integrations": {
+    "cordova": {}
+  }
+}

@@ -1,0 +1,35 @@
+
+<ion-header>
+  <ion-navbar>
+    <ion-title align="center">Badili Nywila</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding class="change">
+<ion-grid>
+<h3><ion-label color="secondary">Ingiza taarifa zako </ion-label></h3>
+  <form [formGroup]="change" (ngSubmit)="password()">
+
+    <ion-list inset>
+      <ion-item>
+        <ion-label><pre> <ion-icon name="lock" ></ion-icon></pre></ion-label>
+        <ion-input type="password" formControlName="current_password"  placeholder="Nywila ya sasa"></ion-input>
+      </ion-item> <br>
+
+      <ion-item>
+        <ion-label><pre> <ion-icon name="lock"></ion-icon></pre></ion-label>
+        <ion-input type="password" formControlName="new_password" placeholder="Nywila mpya"></ion-input>
+      </ion-item><br>
+
+      <ion-item>
+        <ion-label><pre> <ion-icon name="lock"></ion-icon></pre></ion-label>
+        <ion-input type="password" formControlName="confirm_password" placeholder="Rudia Nywila mpya"></ion-input>
+      </ion-item><br>
+    </ion-list>
+
+    <button ion-button color="blue" round type="submit" [disabled]="!change.valid" block>badili nywila</button>
+    </form>
+
+  </ion-grid>
+</ion-content>

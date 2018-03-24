@@ -1,0 +1,34 @@
+
+<ion-header>
+  <ion-navbar>
+    <ion-title>Ingia WAKISHA</ion-title>
+  </ion-navbar>
+
+</ion-header>
+<ion-content padding class="home">
+
+  <ion-card>
+  <ion-card-header color="primary"><h2>Ingia</h2></ion-card-header>
+  <ion-card-content>
+  <form [formGroup]="login" (ngSubmit)="logForm()">
+    <ion-list>
+        <ion-item>
+          <ion-label stacked><h2>Namba ya Simu</h2> </ion-label>
+          <ion-input type="text" formControlName="username" ></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label stacked><h2>Nywila</h2></ion-label>
+          <ion-input type="password" formControlName="password"></ion-input>
+        </ion-item><br>
+    </ion-list>
+        <ion-grid>
+          <ion-row>
+            <ion-col col-6> <button ion-button color="secondary" type="submit" [disabled]="!login.valid"><ion-icon name="log-in"></ion-icon><pre> </pre> Ingia</button></ion-col>
+            <ion-col col-6><a href="#" (click)="forgetPass()"><h2>Nimesahau Nywila</h2></a></ion-col>
+          </ion-row>
+        </ion-grid>
+      </form>
+</ion-card-content>
+</ion-card>
+</ion-content>
